@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MentorOnDemand.Migrations
 {
-    public partial class MOD : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,11 +44,37 @@ namespace MentorOnDemand.Migrations
                     Firstname = table.Column<string>(nullable: true),
                     Lastname = table.Column<string>(nullable: true),
                     YearOfExperience = table.Column<int>(nullable: true),
-                    TrainerTechnology = table.Column<string>(nullable: true)
+                    TrainerTechnology = table.Column<string>(nullable: true),
+                    Active = table.Column<bool>(nullable: true),
+                    ConfirmSignup = table.Column<bool>(nullable: true),
+                    PictureUrl = table.Column<string>(nullable: true),
+                    TrainerTimings = table.Column<string>(nullable: true),
+                    RegCode = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PaymentDtls",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    userId = table.Column<string>(nullable: true),
+                    trainerId = table.Column<string>(nullable: true),
+                    skillId = table.Column<int>(nullable: false),
+                    fees = table.Column<double>(nullable: false),
+                    trainerFees = table.Column<double>(nullable: false),
+                    commision = table.Column<double>(nullable: false),
+                    skillName = table.Column<string>(nullable: true),
+                    paymentStatus = table.Column<bool>(nullable: false),
+                    trainingDetailsId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PaymentDtls", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -58,13 +84,43 @@ namespace MentorOnDemand.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
-                    TOC = table.Column<string>(nullable: true),
-                    Fees = table.Column<int>(nullable: false),
-                    Prerequisites = table.Column<string>(nullable: true)
+                    Fees = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Skills", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TrainingDtls",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    status = table.Column<string>(nullable: true),
+                    progress = table.Column<int>(nullable: false),
+                    commisionAmount = table.Column<double>(nullable: false),
+                    rating = table.Column<int>(nullable: false),
+                    avaRating = table.Column<double>(nullable: false),
+                    startDate = table.Column<DateTime>(nullable: false),
+                    endDate = table.Column<DateTime>(nullable: false),
+                    timeSlot = table.Column<string>(nullable: true),
+                    amountReceived = table.Column<double>(nullable: false),
+                    userId = table.Column<string>(nullable: true),
+                    userFirstName = table.Column<string>(nullable: true),
+                    userLastName = table.Column<string>(nullable: true),
+                    mentorId = table.Column<string>(nullable: true),
+                    mentorFirstName = table.Column<string>(nullable: true),
+                    mentorLastName = table.Column<string>(nullable: true),
+                    skillId = table.Column<int>(nullable: false),
+                    skillname = table.Column<string>(nullable: true),
+                    accept = table.Column<bool>(nullable: false),
+                    rejectNotify = table.Column<bool>(nullable: false),
+                    trainingPaymentStatus = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TrainingDtls", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -199,17 +255,17 @@ namespace MentorOnDemand.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "1", "ca2d44c3-3e60-4870-b714-e27b8c48f7e0", "Admin", "Admin" });
+                values: new object[] { "1", "8d8451f3-1fc6-4c4d-bc20-618a70de49e6", "Admin", "Admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2", "c1216a4c-db23-4d6d-b12e-8a4d4a0afa59", "Mentor", "Mentor" });
+                values: new object[] { "2", "9020eed9-84e2-49d8-8073-23fc0d775c81", "Mentor", "Mentor" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "3", "8efe102f-0efd-4dc9-b47b-1c1a1e6bb692", "Student", "Student" });
+                values: new object[] { "3", "abc589b2-3a8c-4034-a66f-22e293b4475f", "Student", "Student" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -277,7 +333,13 @@ namespace MentorOnDemand.Migrations
                 name: "Courses");
 
             migrationBuilder.DropTable(
+                name: "PaymentDtls");
+
+            migrationBuilder.DropTable(
                 name: "Skills");
+
+            migrationBuilder.DropTable(
+                name: "TrainingDtls");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

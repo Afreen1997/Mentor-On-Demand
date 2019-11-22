@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MentorOnDemand.Migrations
 {
     [DbContext(typeof(MentorContext))]
-    [Migration("20191115084544_MOD5")]
-    partial class MOD5
+    [Migration("20191122092910_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -100,12 +100,6 @@ namespace MentorOnDemand.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Prerequisites")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TOC")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -215,21 +209,21 @@ namespace MentorOnDemand.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "1b225791-ad30-47d9-a77b-08ab97ee894a",
+                            ConcurrencyStamp = "8d8451f3-1fc6-4c4d-bc20-618a70de49e6",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "eb00e24b-85fb-4ad5-a922-764bbe40f909",
+                            ConcurrencyStamp = "9020eed9-84e2-49d8-8073-23fc0d775c81",
                             Name = "Mentor",
                             NormalizedName = "Mentor"
                         },
                         new
                         {
                             Id = "3",
-                            ConcurrencyStamp = "723eede4-f6f0-42c4-a463-e7901e9951a7",
+                            ConcurrencyStamp = "abc589b2-3a8c-4034-a66f-22e293b4475f",
                             Name = "Student",
                             NormalizedName = "Student"
                         });

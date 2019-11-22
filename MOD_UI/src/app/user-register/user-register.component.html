@@ -63,7 +63,7 @@
                                 <div class="form-row" formGroupName="Passwords">
                                     <div class="form-group col required">
                                         <label>Enter Password</label>
-                                        <input type="password" class="form-control" formControlName="password" style="border-radius: 1.5rem" placeholder="enter password">
+                                        <input type="password" class="form-control" formControlName="password" style="border-radius: 1.5rem" placeholder="password">
                                         <small class="text-danger"
                                             *ngIf="UserRegister.get('Passwords.password').touched && UserRegister.get('Passwords.password').errors?.required">This
                                             field is mandatory</small>

@@ -7,3 +7,7 @@
     background-color: #e9ecef;
     border-radius: .25rem;
 }
+td, th {
+    border: 1px solid #dddddd;
+    padding: 15px;
+   }

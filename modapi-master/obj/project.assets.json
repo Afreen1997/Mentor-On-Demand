@@ -8510,11 +8510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Mentor_On_Demand\\Mentor-On-Demand-master\\modapi-master\\MentorOnDemand.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\Mentor-On-Demand-master\\modapi-master\\MentorOnDemand.csproj",
       "projectName": "MentorOnDemand",
-      "projectPath": "C:\\Mentor_On_Demand\\Mentor-On-Demand-master\\modapi-master\\MentorOnDemand.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\Mentor-On-Demand-master\\modapi-master\\MentorOnDemand.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Mentor_On_Demand\\Mentor-On-Demand-master\\modapi-master\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\Mentor-On-Demand-master\\modapi-master\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

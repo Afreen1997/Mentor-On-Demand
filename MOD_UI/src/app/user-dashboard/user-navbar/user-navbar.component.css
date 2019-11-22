@@ -1,27 +1,9 @@
-
-a:not([href]):not([tabindex]) {
-    color: white;
-    text-decoration: none;
-    font-size:25px;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
 }
-
-.btn-1 {
-    border-color: #ff9800;
-    color: orange;
-  }
-  
-  .btn-1:hover {
-    background: #ff9800;
-    color: white;
-  }
-
-  .btn-2 {
-    border-color: #f44336;
-    color: red;
-  }
-  
-  .btn-2:hover {
-    background: #f44336;
-    color: white;
-  }
-  
