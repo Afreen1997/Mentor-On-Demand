@@ -29,7 +29,7 @@ export class getSearchDataComponent implements OnInit {
   }
 
   getAllSkillslogy() {
-    console.log("hello");
+    console.log("Get Skills");
     this.auth.getAllSkills().subscribe(data => {
       this.skillData = data;
     });

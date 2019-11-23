@@ -1,8 +1,4 @@
-.img-thumbnail {
-    padding: .25rem;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: .25rem;
-    max-width: 52%;
-    height: auto;
-}
+td, th {
+    border: 1px solid #dddddd;
+    padding: 15px;
+   }

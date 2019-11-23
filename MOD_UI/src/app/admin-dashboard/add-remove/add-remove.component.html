@@ -13,19 +13,14 @@
           <div class="modal-body">
 
             <div class="form-group required">
-              <label>Name</label>
-              <input class="form-control" placeholder="eg: Dot Net Full Stack" formControlName="name">
+              <label> Technology Name</label>
+              <input class="form-control" placeholder="Technology Name" formControlName="name">
               <small class="text-danger"
                 *ngIf="techAdd.get('name').touched && techAdd.get('name').errors?.required">This
                 field is mandatory</small>
             </div>
 
-            <div class="form-group required">
-              <label>Toc</label>
-              <input type="text" class="form-control" placeholder="eg: C#, Angular, Scrum" formControlName="toc">
-              <small class="text-danger" *ngIf="techAdd.get('toc').touched && techAdd.get('toc').errors?.required">This
-                field is mandatory</small>
-            </div>
+           
 
             <div class="form-group required">
               <label>Fees</label>
@@ -35,13 +30,7 @@
                 field is mandatory</small>
             </div>
               
-            <div class="form-group required">
-                <label>Prerequisites</label>
-                <input type="text" class="form-control" placeholder="eg: C, HTML" formControlName="prerequisites">
-                <small class="text-danger"
-                  *ngIf="techAdd.get('prerequisites').touched && techAdd.get('prerequisites').errors?.required">This
-                  field is mandatory</small>
-              </div>
+          
 
           </div>
           <div class="modal-footer">
@@ -63,18 +52,18 @@
     <thead>
       <tr>
         <th scope="col">Name</th>
-        <th scope="col">Toc</th>
+ 
         <th scope="col">Fees</th>
-        <th scope="col">Prerequisites</th>
+        
         <th scope="col" class="text-center">Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let i of skillData">
         <td scope="row">{{i.name}}</td>
-        <td>{{i.toc}}</td>
+        
         <td>{{i.fees}}</td>
-        <td>{{i.prerequisites}}</td>
+       
         <td class="text-center">
             <button class="btn btn-sm btn-func btn-danger mx-3" (click)="removeTech(i.id)">Delete</button>
         </td>

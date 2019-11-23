@@ -17,8 +17,7 @@ export class AddRemoveComponent implements OnInit {
   ngOnInit() {
     this.techAdd = this.fb.group({
       name: ['', [Validators.required]],
-      toc: ['', [Validators.required]],
-      prerequisites: ['', [Validators.required]],
+    
       fees: ['',[Validators.required]]
     });
 
